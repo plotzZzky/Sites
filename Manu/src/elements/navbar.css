@@ -1,0 +1,135 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding: 6px 0 4px;
+  z-index: 999;
+  background-color: var(--color_accent);
+}
+
+.navbar-align {
+  width: calc(100% - 4vw);
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.menu {
+  width: auto;
+  display: flex;
+}
+
+.menu-item {
+  padding: 4px 1vw;
+  margin: 2px;
+  color: var(--fontColor_sec);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  border-bottom: 2px solid var(--fontColor_sec);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.menu-item:hover::before {
+  transform-origin: center;
+  transform: scaleX(1);
+}
+
+.brand {
+  height: 32px;
+  color: var(--fontColor_sec);
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 26px;
+}
+
+.brand::before {
+  content: '';
+  position: absolute;
+  inset: 2px 0;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  border-bottom: 2px solid var(--fontColor_sec);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.brand:hover::before {
+  transform-origin: center;
+  transform: scaleX(1);
+}
+
+.menu-icon {
+  display: none;
+  padding: 4px 0;
+  margin: 0;
+  border-radius: 2px;
+  filter: invert(100);
+}
+
+.menu-icon::before {
+  content: '';
+  position: absolute;
+  inset: 2px 0;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  filter: invert(100);
+  border-bottom: 2px solid var(--fontColor_sec);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.menu-icon:hover::before {
+  transform-origin: center;
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-align {
+    width: calc(100% - 2vw);
+    padding-left: 1vw;
+    padding-right: 1vw;
+    flex-direction: row-reverse;
+  }
+
+  .menu {
+    align-items: flex-start;
+    height: 32px;
+    width: 32px;
+  }
+
+  .menu-item {
+    display: none;
+  }
+
+  .menu-icon {display: block;}
+}
+
+@media screen and (max-width: 1000px) {
+  .menu.responsive .menu-item {
+    display: block;
+  }
+
+  .menu.responsive {
+    flex-direction: column;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+}

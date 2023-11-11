@@ -1,0 +1,249 @@
+#Menu {
+  padding: 20vh 0 0;
+  width: 100%;
+  display: flex;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 36px auto 0 0;
+  width: 8vw;
+  padding: 10px 0 0;
+  background-color: var(--color_accent);
+  z-index: 990;
+}
+
+.sidebar-filter {
+  width: calc(100% - 16px);
+  margin: auto;
+  border: none;
+  border-radius: 2px;
+  color: var(--fontColor_pri);
+  font-size: clamp(0.7em, 1vw, 0.9em);
+}
+
+.sidebar-align-items {
+  display: flex;
+  flex-direction: column;
+  margin: 2vh 0 0;
+  color: var(--fontColor_pri);
+}
+
+.sidebar-category {
+  cursor: pointer;
+  padding: 0.5vh 0 0.2vh 8px;
+  font-size: clamp(0.8em, 1vw, 1em);
+  font-weight: bold;
+  color: var(--fontColor_sec);
+  position: relative;
+  text-align: left;
+  z-index: 1;
+}
+
+.sidebar-category::before {
+  content: '';
+  position: absolute;
+  inset: 0.5vh 0 0.2vh 2px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  background-color: var(--fontColor_sec);
+  border: none;
+  z-index: -1;
+}
+
+.sidebar-category:hover::before {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.sidebar-category:hover {
+  color: var(--color_accent);
+  transition: 300ms;
+}
+
+/* Cards */
+.div-cards {
+  width: 100%;
+  margin: -16vh 0 auto 8vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  z-index: 900;
+}
+
+.card-margin {
+  flex: 0 1 20%;
+  max-height: 44vh;
+  display: flex;
+}
+
+.card {
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+}
+
+.div-align-card-text {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.card-name,
+.card-price {
+  font-weight: bold;
+  color: var(--fontColor_sec)
+}
+
+.order-btn {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  padding: 0.5vh 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color_accent);
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.7em, 1vw, 1em);
+  z-index: 1;
+}
+
+.card-desc {
+  display: none;
+  position: absolute;
+  width: calc(98% - 4px);
+  bottom: 3vh;
+  margin: auto 1% 0;
+  padding: 2px 2px 10px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  transition: 400ms;
+  font-size: clamp(0.7em, 1vw, 1em);
+}
+
+.card:hover .card-desc {
+  display: block;
+  animation: fadeIn 1.2s;
+}
+
+.snow-icon {
+  font-size: 1.6em;
+  position: absolute;
+  padding: 4px;
+  inset: 0 0 auto auto;
+  border-bottom-left-radius: 80%;
+  padding-left: 10px;
+  color: #9ACFFF;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 1360px) {
+  .card-margin {
+    flex: 0 0 25%;
+  }
+
+  .sidebar {
+    width: 10vw;
+  }
+
+  .div-cards {
+    margin: -16vh 0 0 calc(10vw + 2px);
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .sidebar {
+    position: fixed;
+    inset: 32px 0 auto 0;
+    height: auto;
+    width: 100%;
+    background-color: var(--color_accent);
+    z-index: 990;
+  }
+
+  .sidebar-filter {
+    width: 60vw;
+    margin: auto;
+  }
+
+  .sidebar-align-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 1vw;
+    margin: auto;
+  }
+
+  .sidebar-category {
+    cursor: pointer;
+    padding: 0.5vh 0.5vw 0;
+    font-size: clamp(0.8em, 1vw, 1em);
+    font-weight: bold;
+    color: var(--fontColor_sec);
+    position: relative;
+    text-align: left;
+    z-index: 1;
+  }
+
+  .sidebar-category::before {
+    inset: 0.5vh 0 0 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: transform .2s ease-in-out;
+    background-color: var(--fontColor_sec);
+    border: none;
+    z-index: -1;
+  }
+
+  .sidebar-category:hover::before {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+
+  .div-cards {
+    margin: -10vh 0 auto 0;
+  }
+
+  .card-margin {
+    flex: 0 0 25%;
+    max-height: 32vh;
+  }
+
+  .order-btn {
+    flex-direction: column;
+  }
+
+  .card-desc {
+    bottom: 44px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .card-margin {
+    flex: 0 0 33.3%;
+    max-height: 40vh;
+  }
+
+  .div-cards {
+    margin-top: -8vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card-margin {
+    flex: 0 0 50%;
+    max-height: 40vh;
+  }
+}

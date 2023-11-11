@@ -1,0 +1,305 @@
+.sidebar {
+  position: fixed;
+  inset: 40px 0 auto 0;
+  width: 100%;
+  background-color: var(--color_accent);
+  z-index: 990;
+}
+
+.sidebar-icon {
+  display: none;
+  width: 40px;
+  height: 44px;
+  border-radius: 50%;
+  right: -16px;
+  top: 36%;
+  position: absolute;
+  background-color: var(--color_accent);
+  color: var(--fontColor_sec);
+  z-index: 991;
+}
+
+.icon-arrow {
+  padding: 8px 0 0 8px;
+}
+
+.sidebar-align-items {
+  width: 100%;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1vw;
+  color: var(--fontColor_pri);
+}
+
+.align-categories {
+  display: flex;
+  padding: 4px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 2vw;
+  color: var(--fontColor_pri);
+}
+
+.sidebar-filter {
+  width: 30vw;
+  border: none;
+  border-radius: 2px;
+  color: var(--fontColor_pri);
+  font-size: clamp(0.8em, 1.5vw, 1em);
+}
+
+.sidebar-category {
+  cursor: pointer;
+  font-size: clamp(0.9em, 2vw, 1.2em);
+  font-weight: bold;
+  border-bottom: 2px solid var(--color_accent);
+  color: var(--fontColor_sec);
+  display: flex;
+  gap: 0 1vw;
+  align-items: center;
+}
+
+.sidebar-category a {
+  color: var(--fontColor_sec);
+}
+
+.sidebar-category:hover {
+  border-bottom: 2px solid;
+}
+
+#cardsPage {
+  padding: 9vh 0 0;
+  width: 100%;
+  min-height: 91vh;
+}
+
+.div-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  z-index: 900;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 calc(25% - 2px);
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.card-price,
+.card-name {
+  font-size: clamp(0.8em, 2vw, 1.2em);
+  font-weight: bold;
+  color: var(--fontColor_sec);
+}
+
+.order-btn {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  padding: 4px;
+  border: none;
+  color: var(--fontColor_sec);
+  background-color: var(--color_accent);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 900;
+}
+
+/* Modal */
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000000F2;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.modal-card {
+  width: 1100px;
+  height: 90%;
+  margin: auto;
+  margin-top: 2%;
+  background-color: white;
+  display: flex;
+  box-shadow: var(--shadow);
+  border-radius: 0.5em;
+  position: relative;
+}
+
+.modal-list-images {
+  width: 700px;
+  height: 100%;
+  position: relative;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-infos {
+  width: 400px;
+  height: calc(100% - 4em);
+  background-color: white;
+  position: relative;
+  padding: 2em;
+}
+
+.align-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-name {
+  color: var(--fontColor_pri);
+  font-size: clamp(1.1em, 2vw, 1.5em);
+  font-weight: bold;
+  font-family: var(--font_title);
+}
+
+.modal-price {
+  color: var(--fontColor_pri);
+  font-weight: bold;
+}
+
+.modal-btn-plus {
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  width: 40px;
+  height: 80px;
+  margin: auto;
+  background-color: #0000008C;
+  color: white;
+  font-size: 2em;
+  border: none;
+}
+
+.modal-btn-minus {
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  width: 40px;
+  height: 80px;
+  margin: auto;
+  background-color: #0000008C;
+  color: white;
+  font-size: 2em;
+  border: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar-category {
+    flex-direction: column;
+  }
+
+  #cardsPage {
+    padding-top: 11vh;
+    min-height: 89vh;
+  }
+
+  .div-cards {
+    width: calc(100% - 10px);
+    margin: auto;
+  }
+
+  .modal-card {
+    width: 90%;
+    height: 80%;
+    margin-top: 6%;
+  }
+
+  .modal-list-images {
+    width: 70%;
+    height: auto;
+  }
+
+  .modal-infos {
+    width: 30%;
+    padding: 1em;
+    height: auto;
+  }
+
+  .card-desc {
+    overflow-y: auto;
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #cardsPage {
+    padding-top: 10vh;
+    min-height: 90vh;
+  }
+
+  .card {
+    flex: 0 0 calc(33.3% - 2px);
+  }
+
+  .modal-card {
+    width: 500px;
+    height: 800px;
+    margin-top: 5%;
+    flex-direction: column;
+  }
+
+  .modal-list-images {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-infos {
+    width: calc(100% - 2vw);
+    height: calc(100% - 2vh);
+    padding: 1vh 1vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    flex: 0 0 calc(50% - 2px);
+  }
+
+  .align-categories {
+    gap: 0 5vw;
+  }
+
+  .sidebar-category a {
+    font-size: 0;
+  }
+
+  .card-desc {
+    height: auto;
+    padding-bottom: 2vh;
+  }
+
+  .modal-card {
+    width: 90%;
+    height: auto;
+    margin-top: 5%;
+    flex-direction: column;
+  }
+}
