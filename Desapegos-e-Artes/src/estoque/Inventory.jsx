@@ -4,13 +4,11 @@ import { faAngleRight, faSun, faSnowflake, faRing, faSocks, faBagShopping, faBar
 import NavBar from "../elements/navbar"
 import Card from '../elements/Card'
 import './inventory.css'
-import data from "../media/produtos.json"
-import Modal from '../elements/Modal';
+import estoqueJson from './estoque';
+import Modal from '../elements/Modal'
 
 
 export default function Inventory() {
-  const [getCategory, setCategory] = useState("");
-  const [getList, setList] = useState(data.items);
   const [getInfo, setInfo] = useState([])
   const [getCards, setCards] = useState([])
 
@@ -71,7 +69,7 @@ export default function Inventory() {
 
   function create_product_cards() {
     setCards(
-      getList.map((data) => (
+      estoqueJson.map((data) => (
         <Card key={data.id} data={data} show_modal={() => show_modal(data)}></Card>
       ))
     )

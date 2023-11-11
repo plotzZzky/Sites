@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight, faSnowflake } from '@fortawesome/free-solid-svg-icons'
 import NavBar from "../elements/navbar"
 import Card from '../elements/Card'
 import './menu.css'
-import data from "../media/cardapio.json"
+import menuJson from "./foods"
 
 
 export default function Menu() {
-  const [getCategory, setCategory] = useState("");
-  const [getFood, setFood] = useState(data.food);
   const [getCards, setCards] = useState([]);
   const Categories = ['Brasileira', 'Italiana', 'Panquecas', 'Strogonoffs', 'Salgados', 'Congelados', 'Bebidas']
 
@@ -26,7 +22,6 @@ export default function Menu() {
       }
     });
   }
-
 
   function set_category(value) {
     let items = document.getElementsByClassName("card-margin")
@@ -49,7 +44,7 @@ export default function Menu() {
   }
 
   function create_food_cards() {
-    setCards(getFood.map((data) => (
+    setCards(menuJson.map((data) => (
       <Card key={data.id} data={data} ></Card>))
     )
   }
@@ -64,7 +59,7 @@ export default function Menu() {
 
       <div className="page" id='Menu'>
         <div className='sidebar' id='sideBar'>
-        <input type='Text' placeholder='Buscar' className='sidebar-filter' id='FilterInput' onChange={filter_food}></input>
+          <input type='Text' placeholder='Buscar' className='sidebar-filter' id='FilterInput' onChange={filter_food}></input>
           <div className='sidebar-align-items'>
             {Categories.map((data) => (
               <a className='sidebar-category' onClick={() => set_category(data)}> {data} </a>

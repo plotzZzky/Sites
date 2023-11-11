@@ -9,15 +9,16 @@ const outDir = resolve(__dirname, 'dist')
 // https://vitejs.dev/config/
 export default defineConfig({
   root,
-  base: '/',
+  base: '',
   plugins: [reactRefresh()],
   build: {
+    assetsInclude: ['media/**'],
     outDir,
     emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(root, 'index.html'),
-        profs: resolve(root, 'cardapio', 'index.html'),
+        profs: resolve(root, 'menu', 'index.html'),
       }
     }
   }
