@@ -12,7 +12,7 @@ export default function Card(props) {
     <div className='card-margin'>
       <div className='card'>
         <FontAwesomeIcon icon={faSnowflake} style={{ display: props.data.snow }} className='snow-icon' />
-        <img className='card-img' src={props.data.image}></img>
+        <img className='card-img' src={props.data.image} loading='lazy'></img>
         <div className='div-align-card-text'>
           <a className="card-category" style={{ display: 'none' }}> {props.data.category} </a>
           <button className="order-btn" onClick={go_to_profile}>
