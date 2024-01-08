@@ -5,7 +5,7 @@
 <h2 align="center"> Psicóloga Emanuelle </h2>
 
 #### Site feito para uma psicóloga com React e hospedado em vercel
-![psicoemanuelle](https://github.com/plotzZzky/Sites/assets/12895974/f28540b3-7944-4b5d-a88f-c086f5b73bce)
+![manu](https://github.com/plotzZzky/Sites/assets/12895974/c64fea2b-8ec2-4bdc-86c2-5f95a60ae9c4)
 
 <a href="https://psicoemanuelle.com.br" target=”_blank”> psicoemanuelle.com.br </a>
 
