@@ -5,7 +5,7 @@ import './navbar.css'
 
 
 export default function NavBar() {
-  function open_menu() {
+  function openMenu() {
     let navbar = document.getElementById("menu");
     if (navbar.className == "menu") {
       navbar.classList.add("responsive")
@@ -14,38 +14,38 @@ export default function NavBar() {
     }
   }
 
-  function close_menu() {
+  function closeMenu() {
     let navbar = document.getElementById("menu");
     navbar.classList.remove("responsive")
   }
 
-  function go_to_home() {
+  function goHome() {
     const url = location.pathname
     if (url == '/') {
       document.getElementById('Start').scrollIntoView()
     } else {
       location.href = "/"
     }
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_about() {
+  function goAbout() {
     document.getElementById('About').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_faq() {
+  function goFaq() {
     document.getElementById('Faq').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_market() {
+  function goMarket() {
     location.href = "/estoque/"
   }
 
   const About = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={go_to_about} id="aboutBar">
+      <div className="menu-item" onClick={goAbout} id="aboutBar">
         <a><FontAwesomeIcon icon={faUsers} className='icon-menu' /> Sobre </a>
       </div>
     ) : null
@@ -53,28 +53,28 @@ export default function NavBar() {
 
   const Answers = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={go_to_faq} id="faqBar">
+      <div className="menu-item" onClick={goFaq} id="faqBar">
         <a><FontAwesomeIcon icon={faCircleQuestion} /> Dúvidas </a>
       </div>
     ) : null
   }
 
   return (
-    <div className="navbar" id="navBar">
-
+    <nav id="navBar">
+      
       <div className='navbar-align'>
-        <div className="brand" onClick={go_to_home}>
+        <div className="brand" onClick={goHome}>
           <img className='brand-logo' src={Logo}></img>
           <h3 className="brand-name"> Desapegos e Artes da Gabi </h3>
         </div>
 
 
         <div className="menu" id="menu">
-          <a className="menu-icon" onClick={open_menu}>
+          <a className="menu-icon" onClick={openMenu}>
             <FontAwesomeIcon icon={faBars} size='xl' color='#fffcee'/>
           </a>
 
-          <div className="menu-item" onClick={go_to_home}>
+          <div className="menu-item" onClick={goHome}>
             <a><FontAwesomeIcon icon={faHouse} className='icon-menu' /> Inicio </a>
           </div>
 
@@ -82,12 +82,12 @@ export default function NavBar() {
 
           {Answers()}
 
-          <div className="menu-item" onClick={go_to_market}>
+          <div className="menu-item" onClick={goMarket}>
             <a><FontAwesomeIcon icon={faShirt} /> Produtos </a>
           </div>
 
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

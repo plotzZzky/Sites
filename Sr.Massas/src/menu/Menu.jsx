@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import NavBar from "../elements/navbar"
 import Card from '../elements/Card'
 import './menu.css'
 import menuJson from "./foods"
@@ -7,9 +6,15 @@ import menuJson from "./foods"
 
 export default function Menu() {
   const [getCards, setCards] = useState([]);
-  const Categories = ['Brasileira', 'Italiana', 'Panquecas', 'Strogonoffs', 'Salgados', 'Congelados', 'Bebidas']
+  const CATEGORIES = ['Brasileira', 'Italiana', 'Panquecas', 'Strogonoffs', 'Salgados', 'Congelados', 'Bebidas']
 
-  function filter_food() {
+  const CATEGORIESCARD = () => {
+    CATEGORIES.map((data) => (
+      <a className='sidebar-category' onClick={() => setCategory(data)}> {data} </a>
+    ))
+  }
+
+  function filterFood() {
     const value = document.getElementById("FilterInput").value.toLowerCase();
     const items = document.getElementsByClassName("card-margin");
     Array.from(items).forEach(item => {
@@ -23,7 +28,7 @@ export default function Menu() {
     });
   }
 
-  function set_category(value) {
+  function setCategory(value) {
     let items = document.getElementsByClassName("card-margin")
     Array.from(items).forEach(item => {
       const name = item.querySelector(".card-category").innerHTML;
@@ -36,35 +41,31 @@ export default function Menu() {
     });
   }
 
-  function set_all() {
+  function setAll() {
     let items = document.getElementsByClassName("card-margin")
     for (let item of items) {
       item.style.display = "flex";
     }
   }
 
-  function create_food_cards() {
+  function createFoodCards() {
     setCards(menuJson.map((data) => (
       <Card key={data.id} data={data} ></Card>))
     )
   }
 
   useEffect(() => {
-    create_food_cards()
+    createFoodCards()
   }, [])
 
   return (
     <>
-      <NavBar></NavBar>
-
       <div className="page" id='Menu'>
         <div className='sidebar' id='sideBar'>
-          <input type='Text' placeholder='Buscar' className='sidebar-filter' id='FilterInput' onChange={filter_food}></input>
+          <input type='Text' placeholder='Buscar' className='sidebar-filter' id='FilterInput' onChange={filterFood}></input>
           <div className='sidebar-align-items'>
-            {Categories.map((data) => (
-              <a className='sidebar-category' onClick={() => set_category(data)}> {data} </a>
-            ))}
-            <a className='sidebar-category' onClick={set_all}> Todos </a>
+            {CATEGORIESCARD}
+            <a className='sidebar-category' onClick={setAll}> Todos </a>
           </div>
         </div>
 

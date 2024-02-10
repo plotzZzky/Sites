@@ -6,7 +6,7 @@ import './navbar.css'
 
 export default function NavBar() {
 
-  function open_menu() {
+  function openMenu() {
     let navbar = document.getElementById("menu");
     if (navbar.className == "menu") {
       navbar.classList.add("responsive")
@@ -15,64 +15,63 @@ export default function NavBar() {
     }
   }
 
-  function close_menu() {
+  function closeMenu() {
     let navbar = document.getElementById("menu");
     navbar.classList.remove("responsive")
   }
 
-  function go_to_home() {
+  function goHome() {
     document.getElementById('Start').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_products() {
+  function goProducts() {
     document.getElementById('Products').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_about() {
+  function goAbout() {
     document.getElementById('About').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_faq() {
+  function goFaq() {
     document.getElementById('Faq').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
 
   return (
-    <div className="navbar">
-
+    <nav>
       <div className='navbar-align'>
-        <div className="brand" onClick={go_to_home}>
+        <div className="brand" onClick={goHome}>
           <img className='brand-logo' src={Logo}></img>
-          <a className="brand-name"> Psicóloga Emanuelle</a>
+          <a> Psicóloga Emanuelle</a>
         </div>
 
         <div className="menu" id="menu">
-          <a className="menu-icon" onClick={open_menu}>
+          <a className="menu-icon" onClick={openMenu}>
             <FontAwesomeIcon icon={faBars} size={'xl'} />
           </a>
 
-          <div className="menu-item" onClick={go_to_home}>
+          <div className="menu-item" onClick={goHome}>
             <a> Inicio </a>
           </div>
 
-          <div className="menu-item" onClick={go_to_products}>
+          <div className="menu-item" onClick={goProducts}>
             <a> Atendimento </a>
           </div>
 
-          <div className="menu-item" onClick={go_to_about}>
+          <div className="menu-item" onClick={goAbout}>
             <a> Apresentação </a>
           </div>
 
-          <div className="menu-item" onClick={go_to_faq}>
+          <div className="menu-item" onClick={goFaq}>
             <a> Dúvidas </a>
           </div>
 
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

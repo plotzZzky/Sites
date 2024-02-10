@@ -34,15 +34,15 @@ body {
 }
 
 /* content */
-.page {
+section {
   margin: 0;
   padding: 20vh 2vw 1vh;
   width: calc(100% - 4vw);
-  min-height: 80vh;
+  min-height: 79vh;
   background-color: var(--background);
 }
 
-.background-image {
+#start {
   background-image: url('media/background.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -56,25 +56,25 @@ body {
   color: var(--color_accent);
 }
 
-.title {
+h1 {
   text-align: center;
   font-size: clamp(1.8em, 3vw, 3em);
   font-weight: bold;
   color: var(--color_accent);
 }
 
-.subtitle {
+h2 {
   text-align: center;
   font-size: clamp(1.2em, 3vw, 2em);
   color: var(--fontColor_pri);
 }
 
-.home-text {
+p {
   font-size: clamp(1em, 2vw, 1.2em);
   padding: 0 auto;
 }
 
-.btn {
+button {
   margin-top: 5vh;
   padding: 2vh 2vw;
   font-size: clamp(1em, 2vw, 1.4rem);
@@ -89,7 +89,7 @@ body {
   z-index: 1;
 }
 
-.btn::before {
+button::before {
   content: '';
   position: absolute;
   inset: 3px;
@@ -103,21 +103,21 @@ body {
   z-index: -1;
 }
 
-.btn:hover::before {
+button:hover::before {
   transform-origin: center;
   transform: scaleX(1);
 }
 
-.btn:hover * {
+button:hover * {
   color: var(--color_accent);
 }
 
-.btn:hover .ifood-logo {
+button:hover .ifood-logo {
   opacity: 0;
   display: none;
 }
 
-.btn:hover .ifood-logo-red {
+button:hover .ifood-logo-red {
   opacity: 1;
   display: inline;
   transition: transform .3s ease-in-out;

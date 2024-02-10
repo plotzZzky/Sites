@@ -35,7 +35,7 @@ body {
 }
 
 /* content */
-.page {
+section {
   margin: 0;
   padding: 20vh 2vw 1vh;
   width: calc(100% - 4vw);
@@ -51,7 +51,7 @@ body {
   font-family: var(--font_title);
 }
 
-.title {
+h1 {
   text-align: center;
   font-size: clamp(1.8em, 3vw, 3em);
   font-weight: bold;
@@ -59,19 +59,19 @@ body {
   font-family: var(--font_title);
 }
 
-.subtitle {
+h2 {
   text-align: center;
   font-size: clamp(1.2em, 3vw, 2em);
   color: var(--fontColor_pri);
   font-family: var(--font);
 }
 
-.home-text {
+p {
   font-size: clamp(1em, 2vw, 1.2em);
   padding: 0 auto;
 }
 
-.btn {
+button {
   margin: 1vh auto 0;
   padding: 1.5vh 2.2vw;
   font-size: clamp(1.1em, 2vw, 1.4em);
@@ -86,7 +86,7 @@ body {
   z-index: 1;
 }
 
-.btn::before {
+button::before {
   content: '';
   position: absolute;
   inset: 2px;
@@ -100,12 +100,12 @@ body {
   z-index: -1;
 }
 
-.btn:hover::before {
+button:hover::before {
   transform-origin: center;
   transform: scaleX(1);
 }
 
-.btn:hover {
+button:hover {
   transition: 300ms ease-in-out;
   color: var(--color_accent);
 }

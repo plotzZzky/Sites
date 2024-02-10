@@ -1,13 +1,13 @@
-.navbar {
+nav {
   position: fixed;
   inset: 0 0 auto 0;
-  padding: 6px 0 4px;
+  padding: 5px 0;
   z-index: 999;
   background-color: var(--color_accent);
 }
 
 .navbar-align {
-  width: calc(100% - 4vw);
+  width: calc(100% - 2vw);
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -45,17 +45,17 @@
 }
 
 .brand {
-  height: 32px;
   color: var(--fontColor_sec);
   align-items: center;
   cursor: pointer;
   display: inline-flex;
+  gap: 0 2px;
   position: relative;
 }
 
 .brand-logo {
   width: 32px;
-  height: 26px;
+  height: 32px;
 }
 
 .brand::before {

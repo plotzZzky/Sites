@@ -3,9 +3,8 @@ import { faHouse, faBars, faMagnifyingGlass, faUsers } from '@fortawesome/free-s
 import Logo from "../media/logo.png"
 import './navbar.css'
 
-
 export default function NavBar() {
-  function open_menu() {
+  function openMenu() {
     let navbar = document.getElementById("menu");
     if (navbar.className == "menu") {
       navbar.classList.add("responsive")
@@ -14,69 +13,68 @@ export default function NavBar() {
     }
   }
 
-  function close_menu() {
+  function closeMenu() {
     let navbar = document.getElementById("menu");
     navbar.classList.remove("responsive")
   }
 
-  function go_to_home() {
+  function goHome() {
     const url = location.pathname
     if (url == '/') {
       document.getElementById('Start').scrollIntoView()
     } else {
       location.href = "/"
     }
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_about() {
+  function goAbout() {
     document.getElementById('About').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_faq() {
+  function goFaq() {
     document.getElementById('Faq').scrollIntoView()
-    close_menu()
+    closeMenu()
   }
 
-  function go_to_menu() {
+  function goMenu() {
     location.href = "/menu/"
   }
 
   const About = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={go_to_about} id="aboutBar">
+      <div className="menu-item" onClick={goAbout} id="aboutBar">
         <a><FontAwesomeIcon icon={faUsers} className='icon-menu' /> Sobre </a>
       </div>
     ) : null
   }
 
   return (
-    <div className="navbar">
-
+    <nav>
       <div className='navbar-align'>
-        <div className="brand" onClick={go_to_home}>
+        <div className="brand" onClick={goHome}>
           <img className='brand-logo' src={Logo}></img>
           <a className="brand-name"> Sr.Massas</a>
         </div>
 
         <div className="menu" id="menu">
-          <a className="menu-icon" onClick={open_menu}>
+          <a className="menu-icon" onClick={openMenu}>
             <FontAwesomeIcon icon={faBars} color='white' />
           </a>
 
-          <div className="menu-item" onClick={go_to_home}>
+          <div className="menu-item" onClick={goHome}>
             <a><FontAwesomeIcon icon={faHouse} className='icon-menu' /> Inicio </a>
           </div>
 
           {About()}
 
-          <div className="menu-item" onClick={go_to_menu}>
+          <div className="menu-item" onClick={goMenu}>
             <a><FontAwesomeIcon icon={faMagnifyingGlass} className='icon-menu' /> Cardápio </a>
           </div>
 
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

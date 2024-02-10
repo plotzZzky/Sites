@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
-
 export default function Modal(props) {
   const [getNumber, setNumber] = useState(0);
 
@@ -10,36 +9,36 @@ export default function Modal(props) {
     <img className="modal-img" src={url} style={{ display: 'none' }}></img>
   )) : null
 
-  function go_to_profile() {
+  function goProfile() {
     location.href = `https://shopee.com.br/desapegoseartesdagabi`
   }
 
-  function check_modal() {
+  function checkModal() {
     let modal = document.getElementById("Modal");
     modal.click(
-      close_modal(modal)
+      closeModal(modal)
     );
   }
 
-  function close_modal(modal) {
+  function closeModal(modal) {
     modal.style.display = 'none'
     document.body.style.position = ''
   }
 
-  function show_next_image() {
+  function showNextImage() {
     let images = document.getElementsByClassName('modal-img')
     let n = images.length <= getNumber + 1 ? 0 : getNumber + 1
-    show_image(images, n)
+    showImage(images, n)
   }
 
-  function show_previous_image() {
+  function showPreviousImage() {
     let images = document.getElementsByClassName('modal-img')
     let n = getNumber == 0 ? images.length - 1 : getNumber - 1
-    show_image(images, n)
+    showImage(images, n)
 
   }
 
-  function show_image(images, n) {
+  function showImage(images, n) {
     let i;
     for (i = 0; i < images.length; i++) {
       images[i].style.display = 'none'
@@ -48,23 +47,23 @@ export default function Modal(props) {
     setNumber(n)
   }
 
-  function show_cover() {
+  function showCover() {
     let images = document.getElementsByClassName('modal-img')
-    show_image(images, 0)
+    showImage(images, 0)
   }
 
   useEffect(() => {
-    show_cover()
+    showCover()
   }, [props.data.images])
 
   return (
-    <div className="modal-background" id="Modal" onClick={check_modal}>
+    <div className="modal-background" id="Modal" onClick={checkModal}>
       <div className='modal-card' onClick={e => e.stopPropagation()}>
         <div className="modal-list-images">
           <img className='modal-img' src={props.data.cover}></img>
           {images}
-          <button className="modal-btn-minus" onClick={show_previous_image}> <FontAwesomeIcon icon={faChevronLeft} /> </button>
-          <button className="modal-btn-plus" onClick={show_next_image}> <FontAwesomeIcon icon={faChevronRight} /> </button>
+          <button className="modal-btn-minus" onClick={showPreviousImage}> <FontAwesomeIcon icon={faChevronLeft} /> </button>
+          <button className="modal-btn-plus" onClick={showNextImage}> <FontAwesomeIcon icon={faChevronRight} /> </button>
         </div>
         <div className="modal-infos">
           <div className="align-price">
@@ -72,7 +71,7 @@ export default function Modal(props) {
             <a className='modal-price'> R$ {props.data.price} </a>
           </div>
           <p className="card-desc"> {props.data.desc}</p>
-          <button className="order-btn" onClick={go_to_profile}> Visualizar na loja! </button>
+          <button className="order-btn" onClick={goProfile}> Visualizar na loja! </button>
         </div>
       </div>
     </div>
