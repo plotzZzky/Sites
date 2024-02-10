@@ -40,7 +40,7 @@ section {
 #Start { 
   padding: 20vh 2vw 1vh;
   min-height: 76h;
-  background-image: url('./media/banner.jpg');
+  background-image: url('./assets/banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

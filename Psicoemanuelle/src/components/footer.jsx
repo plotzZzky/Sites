@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faWhatsapp, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import Logo from "../media/icon.webp"
+import Logo from "../assets/icon.webp"
 
 export default function Footer() {
 

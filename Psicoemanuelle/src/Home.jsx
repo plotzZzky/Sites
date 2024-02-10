@@ -1,8 +1,8 @@
-import ProfilePic from './media/profile.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faCross, faQuestion, faFaceSadCry, faHeart, faBriefcase, faPuzzlePiece, faHeartBroken, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
-import faq from './media/Content.js'
+import ProfilePic from './assets/profile.jpg'
+import faq from './assets/Content.js'
 
 export default function Home() {
 
