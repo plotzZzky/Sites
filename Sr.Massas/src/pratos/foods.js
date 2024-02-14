@@ -1,13 +1,13 @@
 /* importa all imagens */
-import Agua from '../media/Agua.webp'
-import AguaGas from '../media/Agua_gas.webp'
-import Batata from '../media/Batata_recheada.jpg'
-import Enrolado from '../media/Enrolado.jpg'
-import Lasanha from '../media/Lasanha.jpg'
-import Nhoque from '../media/Nhoque.jpg'
-import Panela from '../media/Panela.jpg'
-import Panquecas from '../media/Panquecas.webp'
-import Pastel from '../media/Pastel.jpg'
+import Agua from '../assets/Agua.webp'
+import AguaGas from '../assets/Agua_gas.webp'
+import Batata from '../assets/Batata_recheada.jpg'
+import Enrolado from '../assets/Enrolado.jpg'
+import Lasanha from '../assets/Lasanha.jpg'
+import Nhoque from '../assets/Nhoque.jpg'
+import Panela from '../assets/Panela.jpg'
+import Panquecas from '../assets/Panquecas.webp'
+import Pastel from '../assets/Pastel.jpg'
 
 
 const menuJson = [

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faBars, faMagnifyingGlass, faUsers } from '@fortawesome/free-solid-svg-icons'
-import Logo from "../media/logo.png"
+import Logo from "../assets/logo.png"
 import './navbar.css'
 
 export default function NavBar() {
@@ -39,7 +39,7 @@ export default function NavBar() {
   }
 
   function goMenu() {
-    location.href = "/menu/"
+    location.href = "/pratos/"
   }
 
   const About = () => {

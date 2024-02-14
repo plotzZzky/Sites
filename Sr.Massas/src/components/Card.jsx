@@ -9,24 +9,19 @@ export default function Card(props) {
 
   return (
     <div className='card-margin'>
-      <div className='card'>
-
+      <div className='card' onClick={props.showModal}>
         <FontAwesomeIcon icon={faSnowflake} style={{ display: props.data.snow }} className='snow-icon' />
         <img className='card-img' src={props.data.image} loading='lazy'></img>
 
-        <div className='div-align-card-text'>
-          <a className="card-category" style={{ display: 'none' }}> {props.data.category} </a>
+        <div className='card-text'>
+          <a className='card-name'> {props.data.name} </a>
+          <span className='card-desc'> {props.data.desc} </span>
 
           <button className="order-btn" onClick={goProfile}>
-            <a className='card-name'> {props.data.name} </a>
             <a className='card-price'> R$ {props.data.price} </a>
           </button>
 
-          <div className="card-desc">
-            <p>{props.data.desc}</p>
-            <a> {props.data.amount}</a>
-          </div>
-
+          <a className="card-category"> {props.data.category} </a>
         </div>
         
       </div>

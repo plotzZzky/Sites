@@ -11,9 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --color_accent: #F54040;
+  --color_accent: #ec3838;
 
-  --background: #E8E8E8;
+  --background: #f6ffff;
   --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 
   --fontColor_pri: rgb(22, 21, 21);
@@ -36,41 +36,44 @@ body {
 /* content */
 section {
   margin: 0;
-  padding: 20vh 2vw 1vh;
+  padding: 16vh 2vw 1vh;
   width: calc(100% - 4vw);
-  min-height: 79vh;
+  min-height: 83vh;
   background-color: var(--background);
 }
 
-#start {
-  background-image: url('media/background.jpg');
+#Start {
+  background-image: url('assets/background.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 8vh 2vw 1vh;
+  min-height: 91vh;
 }
 
 .big-title {
   text-align: center;
-  font-size: clamp(4em, 5vw, 6em);
+  font-size: clamp(5em, 7vw, 10em);
   font-weight: bold;
   color: var(--color_accent);
 }
 
 h1 {
   text-align: center;
-  font-size: clamp(1.8em, 3vw, 3em);
+  font-size: clamp(2em, 4vw, 4em);
   font-weight: bold;
   color: var(--color_accent);
 }
 
 h2 {
+  margin: -6vh auto 0;
   text-align: center;
-  font-size: clamp(1.2em, 3vw, 2em);
-  color: var(--fontColor_pri);
+  font-size: clamp(1.3em, 3vw, 2.5em);
+  color: #333;
 }
 
-p {
-  font-size: clamp(1em, 2vw, 1.2em);
+h3 {
+  font-size: clamp(1.1em, 2vw, 1.6em);
   padding: 0 auto;
 }
 
@@ -138,12 +141,13 @@ button:hover .ifood-logo-red {
 }
 
 footer {
-  background-color: #333;
-  width: calc(100% - 4vw);
-  padding: 1vh 2vw;
+  margin: 0;
+  padding: 2vh 1vw;
   margin: auto;
   display: flex;
   justify-content: space-around;
+  border: 2px solid var(--color_accent);
+  background-color: #333;
 }
 
 footer div a {
@@ -152,8 +156,11 @@ footer div a {
   font-size: clamp(0.8em, 2vw, 1em);
 }
 
-footer * {
+.footer-link {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0 5px;
 }
 
 @media screen and (max-width: 900px) {

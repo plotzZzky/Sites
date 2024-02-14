@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Home from './Home'
-import NavBar from './elements/navbar'
-import Footer from './elements/footer'
-import './index.css'
+import NavBar from '@comps/navbar'
+import Footer from '@comps/footer'
+import './globals.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </header>
 
     <main>
-      <Home />
+      <Home/>
     </main>
 
     <Footer/>

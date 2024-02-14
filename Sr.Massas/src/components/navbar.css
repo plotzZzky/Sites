@@ -4,6 +4,7 @@ nav {
   padding: 0;
   z-index: 999;
   background-color: var(--color_accent);
+  box-shadow: var(--shadow);
 }
 
 .navbar-align {
@@ -48,7 +49,7 @@ nav {
 }
 
 .brand {
-  padding: 6px 0.5vw 4px;
+  padding: 6px 1vw 4px;
   height: 28px;
   color: var(--fontColor_sec);
   cursor: pointer;
