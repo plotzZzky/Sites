@@ -45,7 +45,7 @@ section {
 
 .big-title {
   text-align: center;
-  font-size: clamp(3.6em, 4vw, 5em);
+  font-size: clamp(3.6em, 5vw, 7em);
   font-weight: bold;
   color: var(--color_accent);
   font-family: var(--font_title);
@@ -71,7 +71,7 @@ p {
   padding: 0 auto;
 }
 
-button {
+.btn {
   margin: 1vh auto 0;
   padding: 1.5vh 2.2vw;
   font-size: clamp(1.1em, 2vw, 1.4em);
@@ -86,7 +86,7 @@ button {
   z-index: 1;
 }
 
-button::before {
+.btn::before {
   content: '';
   position: absolute;
   inset: 2px;
@@ -100,12 +100,12 @@ button::before {
   z-index: -1;
 }
 
-button:hover::before {
+.btn:hover::before {
   transform-origin: center;
   transform: scaleX(1);
 }
 
-button:hover {
+.btn:hover {
   transition: 300ms ease-in-out;
   color: var(--color_accent);
 }
@@ -115,6 +115,19 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.big-brand-text {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+
+.subtitle {
+  margin-top: -5vh;
+  font-size: clamp(1.4em, 3vw, 2.4em);
+  color: var(--fontColor_pri);
+  font-family: var(--font);
 }
 
 .big-logo {
@@ -151,18 +164,37 @@ summary {
 /* footer */
 footer {
   background-color: #333;
-  width: calc(100% - 2em);
-  height: 24px;
-  padding: 1em;
-  margin: auto;
+  margin: 0;
+  padding: 2vh 1vw;
   display: flex;
-  justify-content: space-around;
-  position: relative;
+  justify-content: space-between;
 }
 
-footer a,
-footer i {
-  color: var(--fontColor_sec);
+.footer-align {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--background);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-link * {
+  color: var(--background);
+}
+
+.footer-link a {
+  display: flex;
+  gap: 0 10px;
+  align-items: center;
+  font-size: clamp(0.8em, 2vw, 1em);
   text-decoration: none;
 }
 
@@ -176,11 +208,8 @@ footer i {
     font-size: clamp(2.7em, 3.2vw, 4em);
   }
 
-  .btn {
-    margin-top: 4vh;
-  }
-
   .div-big-brand {
     flex-direction: column;
   }
+
 }

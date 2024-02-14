@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Inventory from './estoque'
-import NavBar from '../elements/navbar'
-import Footer from '../elements/footer'
-import '../index.css'
+import Estoque from './estoque'
+import NavBar from '@comps/navbar'
+import Footer from '@comps/footer'
+import '../globals.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </header>
 
     <main>
-      <Inventory/>
+      <Estoque/>
     </main>
 
     <Footer/>

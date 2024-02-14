@@ -1,16 +1,20 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import reactRefresh from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
 
 const root = resolve(__dirname, 'src')
 const outDir = resolve(__dirname, 'dist')
-
 
 // https://vitejs.dev/config/
 export default defineConfig({
   root,
   base: '/',
-  plugins: [reactRefresh()],
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@comps': resolve(__dirname, 'src/components')
+    }
+  },
   build: {
     outDir,
     emptyOutDir: true,

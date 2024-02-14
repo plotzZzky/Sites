@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse, faBars, faShirt, faCircleQuestion, faUsers } from '@fortawesome/free-solid-svg-icons'
-import Logo from "../media/logo.png"
+import Logo from "../assets/logo.png"
 import './navbar.css'
 
 
@@ -71,7 +71,7 @@ export default function NavBar() {
 
         <div className="menu" id="menu">
           <a className="menu-icon" onClick={openMenu}>
-            <FontAwesomeIcon icon={faBars} size='xl' color='#fffcee'/>
+            <FontAwesomeIcon icon={faBars}  color='#fffcee'/>
           </a>
 
           <div className="menu-item" onClick={goHome}>

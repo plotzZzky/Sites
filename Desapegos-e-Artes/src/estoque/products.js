@@ -1,34 +1,34 @@
-import camisa_preta_b from "../media/clothes/camisa_preta_b.jpg"
-import camisa_preta from "../media/clothes/camisa_preta.jpg"
+import camisa_preta_b from "../assets/clothes/camisa_preta_b.jpg"
+import camisa_preta from "../assets/clothes/camisa_preta.jpg"
 
-import camisa_xadrez from "../media/clothes/camisa_xadrez.jpg"
-import camisa_xadrez_b from "../media/clothes/camisa_xadrez_b.jpg"
-import camisa_xadrez_c from "../media/clothes/camisa_xadrez_c.jpg"
+import camisa_xadrez from "../assets/clothes/camisa_xadrez.jpg"
+import camisa_xadrez_b from "../assets/clothes/camisa_xadrez_b.jpg"
+import camisa_xadrez_c from "../assets/clothes/camisa_xadrez_c.jpg"
 
-import casaco_jeans_a from "../media/clothes/casaco_jeans_a.jpg"
-import casaco_jeans_b from "../media/clothes/casaco_jeans_b.jpg"
-import casaco_jeans_c from "../media/clothes/casaco_jeans_c.jpg"
+import casaco_jeans_a from "../assets/clothes/casaco_jeans_a.jpg"
+import casaco_jeans_b from "../assets/clothes/casaco_jeans_b.jpg"
+import casaco_jeans_c from "../assets/clothes/casaco_jeans_c.jpg"
 
-import casaco_marron_a from "../media/clothes/casaco_marron_a.jpg"
-import casaco_marron_b from "../media/clothes/casaco_marron_b.jpg"
-import casaco_marron_c from "../media/clothes/casaco_marron_c.jpg"
+import casaco_marron_a from "../assets/clothes/casaco_marron_a.jpg"
+import casaco_marron_b from "../assets/clothes/casaco_marron_b.jpg"
+import casaco_marron_c from "../assets/clothes/casaco_marron_c.jpg"
 
-import luva_roxa from "../media/clothes/luva_roxa.jpg"
+import luva_roxa from "../assets/clothes/luva_roxa.jpg"
 
-import short_azul_a from "../media/clothes/short_azul_a.jpg"
-import short_azul_b from "../media/clothes/short_azul_b.jpg"
-import short_azul_c from "../media/clothes/short_azul_c.jpg"
+import short_azul_a from "../assets/clothes/short_azul_a.jpg"
+import short_azul_b from "../assets/clothes/short_azul_b.jpg"
+import short_azul_c from "../assets/clothes/short_azul_c.jpg"
 
-import sobretudo from "../media/clothes/sobretudo.jpg"
-import sobretudo_b from "../media/clothes/sobretudo_b.jpg"
-import sobretudo_c from "../media/clothes/sobretudo_c.jpg"
+import sobretudo from "../assets/clothes/sobretudo.jpg"
+import sobretudo_b from "../assets/clothes/sobretudo_b.jpg"
+import sobretudo_c from "../assets/clothes/sobretudo_c.jpg"
 
-import sueter_azul_a from "../media/clothes/sueter_azul_a.jpg"
-import sueter_azul_b from "../media/clothes/sueter_azul_b.jpg"
-import sueter_azul_c from "../media/clothes/sueter_azul_c.jpg"
+import sueter_azul_a from "../assets/clothes/sueter_azul_a.jpg"
+import sueter_azul_b from "../assets/clothes/sueter_azul_b.jpg"
+import sueter_azul_c from "../assets/clothes/sueter_azul_c.jpg"
 
-import touca_cetim_a from "../media/clothes/touca_cetim_a.jpg"
-import touca_cetim_b from "../media/clothes/touca_cetim_b.jpg"
+import touca_cetim_a from "../assets/clothes/touca_cetim_a.jpg"
+import touca_cetim_b from "../assets/clothes/touca_cetim_b.jpg"
 
 
 const estoqueJson = [

@@ -1,4 +1,4 @@
-import Logo from '../src/media/logo.png'
+import Logo from './assets/logo.png'
 
 export default function Home() {
   const answer = [
@@ -12,12 +12,16 @@ export default function Home() {
   ];
 
   const FAQ = () => {
-    answer.map((data) => (
-      <details>
-        <summary> {data.question} </summary>
-        <a> {data.answer} </a>
-      </details>
-    ))
+    return(
+      <>
+      {answer.map((data, index) => (
+        <details key={index}>
+          <summary> {data.question} </summary>
+          <a> {data.answer} </a>
+        </details>
+      ))}
+      </>
+    )
   }
 
   function goProfile() {
@@ -29,9 +33,9 @@ export default function Home() {
       <section id='Start'>
         <div className='div-big-brand'>
           <img className='big-logo' src={Logo}></img>
-          <div>
-            <h1 className='big-title'> Desapegos e Artes da Gabi </h1>
-            <h2> Transforme seu guarda-roupa em uma obra de arte </h2>
+          <div className='big-brand-text'>
+            <span className='big-title'> Desapegos e Artes da Gabi </span><br/>
+            <a className='subtitle'> Transforme seu guarda-roupa em uma obra de arte </a>
           </div>
         </div>
 
@@ -47,7 +51,7 @@ export default function Home() {
       </section>
 
       <section id='Faq'>
-        <h2 className='title'>  Dúvidas... </h2>
+        <h1>  Dúvidas... </h1>
         {FAQ()}
       </section>
     </>

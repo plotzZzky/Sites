@@ -1,31 +1,20 @@
 .sidebar {
   position: fixed;
   inset: 40px 0 auto 0;
-  width: 100%;
   background-color: var(--color_accent);
   z-index: 990;
 }
 
-.sidebar-icon {
-  display: none;
-  width: 40px;
-  height: 44px;
-  border-radius: 50%;
-  right: -16px;
-  top: 36%;
-  position: absolute;
-  background-color: var(--color_accent);
-  color: var(--fontColor_sec);
-  z-index: 991;
+.align-sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1vw;
+  padding: 4px 0 4px;
 }
 
-.icon-arrow {
-  padding: 8px 0 0 8px;
-}
-
-.sidebar-align-items {
-  width: 100%;
-  padding: 4px 0;
+.align-categories {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,41 +23,48 @@
   color: var(--fontColor_pri);
 }
 
-.align-categories {
-  display: flex;
-  padding: 4px 0;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0 2vw;
-  color: var(--fontColor_pri);
-}
-
 .sidebar-filter {
-  width: 30vw;
+  width: clamp(100px, 60vw, 400px);
   border: none;
   border-radius: 2px;
   color: var(--fontColor_pri);
   font-size: clamp(0.8em, 1.5vw, 1em);
 }
 
-.sidebar-category {
-  cursor: pointer;
-  font-size: clamp(0.9em, 2vw, 1.2em);
-  font-weight: bold;
-  border-bottom: 2px solid var(--color_accent);
-  color: var(--fontColor_sec);
+.category {
   display: flex;
-  gap: 0 1vw;
+  gap: 0 5px;
+  padding: 0 1vw;
   align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
-.sidebar-category a {
+.category * {
+  font-size: clamp(1em, 2vw, 1.2em);
   color: var(--fontColor_sec);
 }
 
-.sidebar-category:hover {
-  border-bottom: 2px solid;
+.category a {
+  font-size: clamp(0.8em, 2vw, 1em);
+  font-weight: bold;
+  color: var(--fontColor_sec);
+}
+
+.category::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -2px;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform .2s ease-in-out;
+  border-bottom: 3px solid var(--fontColor_sec);
+  z-index: -1;
+}
+
+.category:hover::before {
+  transform-origin: center;
+  transform: scaleX(1);
 }
 
 #cardsPage {
@@ -85,10 +81,15 @@
   z-index: 900;
 }
 
-.card {
+.card-margin {
   position: relative;
-  flex: 0 0 calc(25% - 2px);
-  margin: 1px;
+  flex: 0 0 25%;
+  aspect-ratio: 1/1.32;
+}
+
+.card {
+  margin: 1vh 1vw;
+  padding: 0.5vh 0.5vh; 
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -99,21 +100,25 @@
 .card-img {
   width: 100%;
   height: 100%;
+  margin: auto;
   object-fit: fill;
 }
 
-.card-price,
 .card-name {
-  font-size: clamp(0.8em, 2vw, 1.2em);
+  font-size: clamp(0.8em, 2.5vw, 1.2em);
   font-weight: bold;
-  color: var(--fontColor_sec);
+  color: var(--fontColor_pri);
+  font-family: var(--font_title);
+}
+
+.card-price {
+  font-size: clamp(0.7em, 2.5vw, 1.1em);
+  color: #3b3b3b;
 }
 
 .order-btn {
-  position: absolute;
-  inset: auto 0 0 0;
-  width: 100%;
-  padding: 4px;
+  margin: auto;
+  padding: 10px 3vw;
   border: none;
   color: var(--fontColor_sec);
   background-color: var(--color_accent);
@@ -121,35 +126,29 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  z-index: 900;
 }
 
 /* Modal */
 .modal-background {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   background-color: #000000F2;
-  width: 100%;
-  height: 100%;
   z-index: 999;
 }
 
 .modal-card {
-  width: 1100px;
-  height: 90%;
-  margin: auto;
-  margin-top: 2%;
+  width: clamp(300px, 96vw, 1200px);
+  height: 90vh;
+  margin: 4% auto auto;
   background-color: white;
   display: flex;
+  flex-wrap: wrap;
   box-shadow: var(--shadow);
-  border-radius: 0.5em;
-  position: relative;
 }
 
 .modal-list-images {
-  width: 700px;
+  flex: 1 1 70%;
   height: 100%;
   position: relative;
 }
@@ -157,15 +156,16 @@
 .modal-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .modal-infos {
-  width: 400px;
-  height: calc(100% - 4em);
-  background-color: white;
-  position: relative;
-  padding: 2em;
+  flex: 1 1 30%;
+}
+
+.modal-desc {
+  font-size: clamp(0.8em, 1.5vw, 1.1em);
+  padding: 0 5px;
 }
 
 .align-price {
@@ -212,8 +212,19 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .sidebar-category {
+  #cardsPage {
+    padding-top: 11vh;
+    min-height: 89vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .category {
     flex-direction: column;
+  }
+
+  .align-categories {
+    gap: 0;
   }
 
   #cardsPage {
@@ -221,85 +232,43 @@
     min-height: 89vh;
   }
 
-  .div-cards {
-    width: calc(100% - 10px);
-    margin: auto;
-  }
-
   .modal-card {
-    width: 90%;
-    height: 80%;
-    margin-top: 6%;
+    width: clamp(300px, 96vw, 1200px);
+    height: 96vh;
+    margin: 2vh auto auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
-
+  
   .modal-list-images {
-    width: 70%;
     height: auto;
+    max-height: 80%;
   }
-
+  
   .modal-infos {
-    width: 30%;
-    padding: 1em;
-    height: auto;
-  }
-
-  .card-desc {
-    overflow-y: auto;
-    font-size: 0.9em;
+    flex: 1 1 40%;
+    overflow: auto;
   }
 }
 
-@media screen and (max-width: 960px) {
-  #cardsPage {
-    padding-top: 10vh;
-    min-height: 90vh;
-  }
+@media screen and (max-width: 560px) {
 
-  .card {
-    flex: 0 0 calc(33.3% - 2px);
-  }
-
-  .modal-card {
-    width: 500px;
-    height: 800px;
-    margin-top: 5%;
+  .align-sidebar {
     flex-direction: column;
   }
 
-  .modal-list-images {
-    width: 100%;
-    height: auto;
+  #cardsPage {
+    padding-top: 14vh;
+    min-height: 86vh;
   }
 
-  .modal-infos {
-    width: calc(100% - 2vw);
-    height: calc(100% - 2vh);
-    padding: 1vh 1vw;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .card {
-    flex: 0 0 calc(50% - 2px);
-  }
-
-  .align-categories {
-    gap: 0 5vw;
-  }
-
-  .sidebar-category a {
-    font-size: 0;
+  .card-margin {
+    flex: 0 0 50%;
   }
 
   .card-desc {
     height: auto;
     padding-bottom: 2vh;
   }
-
-  .modal-card {
-    width: 90%;
-    height: auto;
-    margin-top: 5%;
-    flex-direction: column;
-  }
+  
 }
