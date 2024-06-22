@@ -75,7 +75,7 @@ export default function NavBar() {
           </span>
 
           <span onClick={goHome}>
-            <FontAwesomeIcon icon={faHouse} className='icon-menu' />Inicio
+            <FontAwesomeIcon icon={faHouse} className='icon-menu' /> Inicio
           </span>
 
           {About()}
