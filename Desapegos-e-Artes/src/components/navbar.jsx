@@ -45,17 +45,17 @@ export default function NavBar() {
 
   const About = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={goAbout} id="aboutBar">
-        <a><FontAwesomeIcon icon={faUsers} className='icon-menu' /> Sobre </a>
-      </div>
+      <span onClick={goAbout} id="aboutBar">
+        <FontAwesomeIcon icon={faUsers} className='icon-menu' /> Sobre
+      </span>
     ) : null
   }
 
   const Answers = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={goFaq} id="faqBar">
-        <a><FontAwesomeIcon icon={faCircleQuestion} /> Dúvidas </a>
-      </div>
+      <span onClick={goFaq} id="faqBar">
+        <FontAwesomeIcon icon={faCircleQuestion} /> Dúvidas
+      </span>
     ) : null
   }
 
@@ -63,28 +63,28 @@ export default function NavBar() {
     <nav id="navBar">
       
       <div className='navbar-align'>
-        <div className="brand" onClick={goHome}>
+        <span onClick={goHome}>
           <img className='brand-logo' src={Logo}></img>
-          <h3 className="brand-name"> Desapegos e Artes da Gabi </h3>
-        </div>
+           Desapegos e Artes da Gabi
+        </span>
 
 
         <div className="menu" id="menu">
-          <a className="menu-icon" onClick={openMenu}>
+          <span onClick={openMenu} id='menuBtn'>
             <FontAwesomeIcon icon={faBars}  color='#fffcee'/>
-          </a>
+          </span>
 
-          <div className="menu-item" onClick={goHome}>
-            <a><FontAwesomeIcon icon={faHouse} className='icon-menu' /> Inicio </a>
-          </div>
+          <span onClick={goHome}>
+            <FontAwesomeIcon icon={faHouse} className='icon-menu' />Inicio
+          </span>
 
           {About()}
 
           {Answers()}
 
-          <div className="menu-item" onClick={goMarket}>
-            <a><FontAwesomeIcon icon={faShirt} /> Produtos </a>
-          </div>
+          <span onClick={goMarket}>
+            <FontAwesomeIcon icon={faShirt} /> Produtos
+          </span>
 
         </div>
       </div>

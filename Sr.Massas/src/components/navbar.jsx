@@ -4,8 +4,9 @@ import Logo from "../assets/logo.png"
 import './navbar.css'
 
 export default function NavBar() {
+
   function openMenu() {
-    let navbar = document.getElementById("menu");
+    const navbar = document.getElementById("menu");
     if (navbar.className == "menu") {
       navbar.classList.add("responsive")
     } else {
@@ -14,7 +15,7 @@ export default function NavBar() {
   }
 
   function closeMenu() {
-    let navbar = document.getElementById("menu");
+    const navbar = document.getElementById("menu");
     navbar.classList.remove("responsive")
   }
 
@@ -44,36 +45,33 @@ export default function NavBar() {
 
   const About = () => {
     return location.pathname === '/' ? (
-      <div className="menu-item" onClick={goAbout} id="aboutBar">
-        <a><FontAwesomeIcon icon={faUsers} className='icon-menu' /> Sobre </a>
-      </div>
+      <span onClick={goAbout} id="aboutBar">
+        <FontAwesomeIcon icon={faUsers}/> Sobre
+      </span>
     ) : null
   }
 
   return (
     <nav>
-      <div className='navbar-align'>
-        <div className="brand" onClick={goHome}>
-          <img className='brand-logo' src={Logo}></img>
-          <a className="brand-name"> Sr.Massas</a>
-        </div>
+      <span onClick={goHome}>
+        <img className='brand-logo' src={Logo}></img> Sr.Massas
+      </span>
 
-        <div className="menu" id="menu">
-          <a className="menu-icon" onClick={openMenu}>
-            <FontAwesomeIcon icon={faBars} color='white' />
-          </a>
+      <div className="menu" id="menu">
+        <span onClick={openMenu} id='menuBtn'>
+          <FontAwesomeIcon icon={faBars}/>
+        </span>
 
-          <div className="menu-item" onClick={goHome}>
-            <a><FontAwesomeIcon icon={faHouse} className='icon-menu' /> Inicio </a>
-          </div>
+        <span onClick={goHome}>
+          <FontAwesomeIcon icon={faHouse}/> Inicio
+        </span>
 
-          {About()}
+        {About()}
 
-          <div className="menu-item" onClick={goMenu}>
-            <a><FontAwesomeIcon icon={faMagnifyingGlass} className='icon-menu' /> Cardápio </a>
-          </div>
+        <span onClick={goMenu}>
+          <FontAwesomeIcon icon={faMagnifyingGlass}/> Cardápio
+        </span>
 
-        </div>
       </div>
     </nav>
   )

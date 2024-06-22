@@ -12,7 +12,7 @@ export default function Menu() {
         {CATEGORIES.map((data, index) => (
           <a className='sidebar-category' key={index} onClick={() => setCategory(data)}> {data} </a>
         ))}
-        <a className='sidebar-category' onClick={setAll}> Todos </a>
+        <a className='sidebar-category' onClick={showAllCards}> Todos </a>
       </div>
     )
   }
@@ -55,7 +55,7 @@ export default function Menu() {
     });
   }
 
-  function setAll() {
+  function showAllCards() {
     let items = document.getElementsByClassName("card-margin")
     for (let item of items) {
       item.style.display = "block";

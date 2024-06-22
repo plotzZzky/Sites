@@ -25,29 +25,29 @@ export default function Footer() {
     <footer id="footer">
         <div className="brand-footer">
           <img className='brand-logo-footer' src={Logo}></img>
-          <a className="brand-name-footer"> Psicóloga Emanuelle</a>
+          <span className="brand-name-footer"> Psicóloga Emanuelle</span>
         </div>
 
       <div className='align-links'>
-        <div className="link" onClick={goEmail}>
+        <span onClick={goEmail}>
           <FontAwesomeIcon icon={faEnvelope} />
-          <span> psicoemanuelledecastro@gmail.com </span>
-        </div>
+          psicoemanuelledecastro@gmail.com
+        </span>
 
-        <div className="link" onClick={goWhats}>
+        <span onClick={goWhats}>
           <FontAwesomeIcon icon={faWhatsapp} />
-          <span> (51)99834-1299 </span>
-        </div>
+          (51)99834-1299
+        </span>
 
-        <div className="link" onClick={goInsta}>
+        <span onClick={goInsta}>
           <FontAwesomeIcon icon={faInstagram} />
-          <span> psicologia_ao_meu_redor </span>
-        </div>
+          psicologia_ao_meu_redor
+        </span>
 
-        <div className="link" onClick={goLinkedin}>
+        <span onClick={goLinkedin}>
           <FontAwesomeIcon icon={faLinkedin} />
-          <span> psicoemanuelledecastro </span>
-        </div>
+          psicoemanuelledecastro
+        </span>
       </div>
     </footer>    
   )

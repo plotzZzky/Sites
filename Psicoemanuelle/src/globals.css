@@ -115,7 +115,7 @@ button:hover {
 }
 
 /* Products */
-.div-products {
+.products {
   width: calc(100% - 2em);
   padding: 5em 1em 0;
   display: flex;
@@ -212,7 +212,7 @@ footer {
   border-top: 1px solid snow;
 }
 
-.link {
+footer span {
   color: var(--fontColor_sec);
   cursor: pointer;
   display: flex;
@@ -220,12 +220,7 @@ footer {
   align-items: center;
 }
 
-.link * {
-  color: var(--fontColor_sec);
-}
-
 .brand-footer {
-  height: 32px;
   margin: 0 auto;
   align-items: center;
   display: inline-flex;
@@ -233,12 +228,12 @@ footer {
 }
 
 .brand-logo-footer {
-  width: 64px;
-  height: 52px;
+  width: 48px;
+  height: 40px;
 }
 
 .brand-name-footer {
-  font-size: clamp(1.1em, 3vw, 1.5em);
+  font-size: clamp(1em, 3vw, 1.4em);
 }
 
 @media screen and (max-width: 1200px) {

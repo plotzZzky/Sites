@@ -6,18 +6,16 @@ export default function Footer() {
 
     return(
       <footer>
-        <div className='footer-align'>
-          <div className='footer-link'>
-            <a href='https://shopee.com.br/desapegoseartesdagabi'> <FontAwesomeIcon icon={faBagShopping} /> Loja </a>
-          </div>
+        <h3> Nossos contatos: </h3>
 
-          <div className='footer-link'>
-            <a href='mailto:contato@desapegoseartesdagabi.com'> <FontAwesomeIcon icon={faEnvelope} /> E-mail </a>
-          </div>
+        <div>
+          <span onClick='https://shopee.com.br/desapegoseartesdagabi'>
+            <FontAwesomeIcon icon={faBagShopping} /> shopee/desapegoseartesdagabi
+          </span>
 
-          <div className='footer-link'>
-            <a href='https://www.github.com/plotzzzky'> <FontAwesomeIcon icon={faGithub} /> Dev </a>
-          </div>
+          <span onClick='mailto:contato@desapegoseartesdagabi.com'>
+            <FontAwesomeIcon icon={faEnvelope} /> contato@desapegoseartesdagabi.com
+          </span>
         </div>
       </footer>
     )

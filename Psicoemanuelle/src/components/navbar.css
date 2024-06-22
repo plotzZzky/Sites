@@ -1,7 +1,7 @@
 nav {
   position: fixed;
   inset: 0 0 auto 0;
-  padding: 5px 0;
+  padding: 3px 0;
   z-index: 999;
   background-color: var(--color_accent);
 }
@@ -14,23 +14,22 @@ nav {
 }
 
 .menu {
-  width: auto;
   display: flex;
 }
 
-.menu-item {
-  padding: 4px 1vw;
-  margin: 2px;
+.menu span {
+  padding: 0.8vh 1vw;
+  margin: 0 5px;
   color: var(--fontColor_sec);
   text-align: center;
   cursor: pointer;
   position: relative;
 }
 
-.menu-item::before {
+.menu span::before {
   content: '';
   position: absolute;
-  inset: 2px;
+  inset: 0;
   transform-origin: center;
   transform: scaleX(0);
   transition: transform .2s ease-in-out;
@@ -39,12 +38,17 @@ nav {
   z-index: -1;
 }
 
-.menu-item:hover::before {
+.menu span:hover::before {
   transform-origin: center;
   transform: scaleX(1);
 }
 
+#menuBtn {
+  display: none;
+}
+
 .brand {
+  max-height: 36px;
   color: var(--fontColor_sec);
   align-items: center;
   cursor: pointer;
@@ -61,7 +65,7 @@ nav {
 .brand::before {
   content: '';
   position: absolute;
-  inset: 2px 0;
+  inset: 0;
   transform-origin: center;
   transform: scaleX(0);
   transition: transform .2s ease-in-out;
@@ -75,33 +79,7 @@ nav {
   transform: scaleX(1);
 }
 
-.menu-icon {
-  display: none;
-  padding: 4px 0;
-  margin: 0;
-  border-radius: 2px;
-  filter: invert(100);
-}
-
-.menu-icon::before {
-  content: '';
-  position: absolute;
-  inset: 2px 0;
-  transform-origin: center;
-  transform: scaleX(0);
-  transition: transform .2s ease-in-out;
-  filter: invert(100);
-  border-bottom: 2px solid var(--fontColor_sec);
-  border-radius: 2px;
-  z-index: -1;
-}
-
-.menu-icon:hover::before {
-  transform-origin: center;
-  transform: scaleX(1);
-}
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .navbar-align {
     width: calc(100% - 2vw);
     padding-left: 1vw;
@@ -111,19 +89,15 @@ nav {
 
   .menu {
     align-items: flex-start;
-    height: 32px;
-    width: 32px;
   }
 
-  .menu-item {
+  .menu span{
     display: none;
   }
 
-  .menu-icon {display: block;}
-}
+  #menuBtn {display: block;}
 
-@media screen and (max-width: 1000px) {
-  .menu.responsive .menu-item {
+  .menu.responsive span {
     display: block;
   }
 

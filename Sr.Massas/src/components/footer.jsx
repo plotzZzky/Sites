@@ -14,20 +14,17 @@ export default function Footer() {
 
     return(
       <footer>
-        <div className='footer-link'> 
-          <FontAwesomeIcon icon={faStore} color='white'/>
-          <a onClick={goProfile}> Loja </a>
-        </div>
+        <span onClick={goProfile}> 
+          <FontAwesomeIcon icon={faStore} color='white'/> ifood.com/srmassas
+        </span>
 
-        <div className='footer-link'> 
-          <FontAwesomeIcon icon={faEnvelope} color='white'/>
-          <a onClick={goProfile}> Contato </a>
-        </div>
+        <span onClick={goProfile}> 
+          <FontAwesomeIcon icon={faEnvelope} color='white'/> contato@srmassas.com
+        </span>
 
-        <div className='footer-link'> 
-          <FontAwesomeIcon icon={faGithub} color='white'/>
-          <a onClick={goGithub}> Dev </a>
-        </div>
+        <span onClick={goGithub}>
+          <FontAwesomeIcon icon={faGithub} color='white'/> github.com/plotzzzky
+        </span>
       </footer> 
     )
 }

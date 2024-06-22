@@ -146,21 +146,16 @@ footer {
   margin: auto;
   display: flex;
   justify-content: space-around;
-  border: 2px solid var(--color_accent);
   background-color: #333;
 }
 
-footer div a {
-  text-decoration: none;
-  color: var(--fontColor_sec);
-  font-size: clamp(0.8em, 2vw, 1em);
-}
-
-.footer-link {
+footer span {
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0 5px;
+  color: var(--fontColor_sec);
+  font-size: clamp(0.8em, 2vw, 1em);
 }
 
 @media screen and (max-width: 900px) {

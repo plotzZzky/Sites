@@ -14,14 +14,14 @@ export default function Card(props) {
         <img className='card-img' src={props.data.image} loading='lazy'></img>
 
         <div className='card-text'>
-          <a className='card-name'> {props.data.name} </a>
+          <span className='card-name'> {props.data.name} </span>
           <span className='card-desc'> {props.data.desc} </span>
 
           <button className="order-btn" onClick={goProfile}>
-            <a className='card-price'> R$ {props.data.price} </a>
+            <span className='card-price'> R$ {props.data.price} </span>
           </button>
 
-          <a className="card-category"> {props.data.category} </a>
+          <span className="card-category"> {props.data.category} </span>
         </div>
         
       </div>

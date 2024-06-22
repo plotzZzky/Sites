@@ -12,7 +12,7 @@ export default function Home() {
     "Transforme sua vida, supere seus desafios..."
   ]
 
-  const TITLE = TITLES[Math.floor(Math.random() * (2 - 0) + 0)] // Titulo da pagina inicial
+  const TITLE = TITLES[Math.floor(Math.random() * (2 - 0) + 0)] // Seleciona o titulo da pagina inicial
 
   const PRODUCTS = [
     { "icon": <FontAwesomeIcon icon={faCross} className='product-icon' />, "title": "Luto", "desc": "Lidar com a dor da perda de alguém especial" },
@@ -59,7 +59,7 @@ export default function Home() {
   
   const PRODUCTSCARDS = () => {
     return (
-      <div className='div-products'>
+      <div className='products'>
         {PRODUCTS.map((data, index) => (
           <div className='product' key={index}>
             <div>
