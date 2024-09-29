@@ -1,5 +1,4 @@
 :root {
-  font-family: system-ui;
   line-height: 1.4;
   font-size: 16px;
   font-weight: 500;
@@ -11,14 +10,11 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --color_accent: #3e4c7e;
-  --shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.08);
+  --color_accent: #dd5a86;
+  --shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.08);
 
   --fontColor_pri: rgb(22, 21, 21);
   --fontColor_sec: rgb(238, 227, 227);
-  --font: Signika Negative;
-
-  --menu_size: 120px;
 }
 
 * {  scroll-behavior: smooth;}
@@ -34,37 +30,30 @@ section {
   margin: 0;
   padding: 9vh 2vw 1vh;
   min-height: 90vh;
-  background-color:  #fdf1fb;
+  background-color: #ffffff;
 }
 
 #Start { 
-  padding: 20vh 2vw 1vh;
-  min-height: 76h;
-  background-image: url('./assets/banner.jpg');
+  padding: 24vh 2vw 1vh;
+  min-height: 75h;
+  background-image: url('../public/banner.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.big-title {
+h1 {
   text-align: center;
   font-size: clamp(2.2em, 4vw, 4em);
   font-weight: bold;
   color: var(--color_accent);
 }
 
-h1 {
+h2 {
   text-align: center;
   font-size: clamp(1.8em, 3vw, 3em);
   font-weight: bold;
   color: var(--color_accent);
-}
-
-h2 {
-  text-align: center;
-  font-size: clamp(1.4em, 3.2vw, 2.6em);
-  color: var(--fontColor_pri);
-  font-family: var(--font);
 }
 
 p {
@@ -82,9 +71,9 @@ button {
   border: none;
   background-color: var(--color_accent);
   box-shadow: var(--shadow);
-  cursor: pointer;
   position: relative;
   z-index: 1;
+  cursor: pointer;
   display: inline-flex;
   gap: 0 8px;
   align-items: center;
@@ -100,7 +89,7 @@ button::before {
   border-radius: 4px;
   transform-origin: center;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   z-index: -1;
 }
 
@@ -114,44 +103,50 @@ button:hover {
   color: var(--color_accent);
 }
 
+button * {
+  font-size: 1.6rem;
+}
+
 /* Products */
 .products {
-  width: calc(100% - 2em);
-  padding: 5em 1em 0;
+  width: calc(100% - 2vw);
+  padding: 2vh 1vw 0;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  gap: 1vw;
 }
 
 .product {
-  flex: 0 0 calc(25% - 2em);
-  padding: 1em;
+  flex: 0 0 calc(25% - 3vw);
+  padding: 2vh 1vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  box-shadow: var(--shadow);
 }
 
-.product-icon {
+.product > :first-child {
   width: 80px;
-  font-size: 4rem;
-  padding: 10px;
+  font-size: 5em;
+  padding: 10px 10px 20px;
   color: var(--color_accent);
 }
 
 .product-title {
-  font-size: clamp(1em, 1vw, 1.6em);
+  font-size: clamp(1em, 1.5vw, 1.4em);
   font-weight: 600;
-  color: var(--color_accent);
 }
 
-.icon-whats {
-  font-size: 1.6rem;
+.product-desc {
+  font-size: clamp(.9em, 1.5vw, 1.2em);
 }
 
-/* ABout */
+/* About */
 .about-tab {
-  width: calc(100% - 2em);
+  width: calc(100% - 2vw);
   height: 90%;
-  padding: 1em;
+  padding: 1vh 1vw;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -159,77 +154,93 @@ button:hover {
   gap: 0px 5em;
 }
 
-.about-div * {
+.about-tab * {
   text-align: left;
   font-size: clamp(1em, 1vw, 1.6em);
 }
 
-.about-profile {
-  width:  400px;
-  margin: auto;
-  box-shadow: var(--shadow);
-  border-radius: 50%;
+#About img {
+  width:  60vw;
+  max-width: 400px;
+  margin: auto auto 2vh;
+  border-radius: 2px;
+  border: 10px solid white;
   cursor: pointer;
+  box-shadow: var(--shadow);
 }
 
-.about-profile:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+/* Faq */
+.align-faq {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 1vw;
+  margin-bottom: 5vh;
 }
 
-details {
-  padding: 0.5vh 1vw;
-  margin: 1vh 2vw;
-  color: var(--color_accent);
-  border: 2px solid var(--color_accent);
+.align-faq div {
+  flex: 0 0 calc(50% - 3vw);
+  padding: .5vh 1vw 2vh;
   text-align: left;
+  border: 1px solid var(--color_accent);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
 }
 
-details a {
-  font-size: clamp(0.9em, 2vw, 1.1em);
-}
-
-summary {
-  font-size: clamp(1em, 2vw, 1.4em);
-  padding: 1vh 2vw;
+.align-faq p {
+  font-size: clamp(0.9em, 2vw, 1.2em);
+  color: var(--color_accent);
+  font-weight: bold;
   text-align: center;
 }
 
+.align-faq span {
+  color: var(--color_pri);
+  font-size: clamp(0.9em, 2vw, 1em);
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
+/* footer */
 footer {
   background-color: #333;
   padding: 2vh 0.5vw 1vh;
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1vh 0;
 }
 
 .align-links {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  gap: 1%;
   margin: 1vh 0;
-  padding: 2vh 0 0;
-  border-top: 1px solid snow;
+  border-top: 1px solid var(--color_accent);
 }
 
 footer span {
+  margin: 2vh 0 0;
+  flex: 0 0 32%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5px;
   color: var(--fontColor_sec);
   cursor: pointer;
-  display: flex;
-  gap: 0 5px;
-  align-items: center;
 }
 
 .brand-footer {
   margin: 0 auto;
   align-items: center;
   display: inline-flex;
+  gap: 5px;
   color: var(--fontColor_sec);
 }
 
 .brand-logo-footer {
-  width: 48px;
-  height: 40px;
+  width: 40px;
+  height: 36px;
 }
 
 .brand-name-footer {
@@ -241,58 +252,41 @@ footer span {
     flex-direction: column-reverse;
   }
 
-  .page,
-  #Start {
+  section {
     padding: 12vh 2vw 2vh;
     width: calc(100% - 4vw);
-  }
-
-  #Start {
-    padding: 20vh 2vw 2vh;
-    width: calc(100% - 4vw);
+    min-height: 86vh;
   }
 
   .btn {
     font-size: 1em;
   }
 
-  footer span {
+  footer .align-links span {
     font-size: 0;
   }
 
-  footer * {
-    font-size: 1.2em;
-  }
-
-  .product {
-    flex: 1 0 40%;
-  }
-
-  .about-profile {
-    width: 40%;
-  }
-
-  .product-title {
-    font-size: 1.4em;
+  footer .align-links span > * {
+    font-size: 32px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .div-products {
-    width: 100%;
-    padding: 5em 0 0;
+  #Start {
+    padding: 28vh 1vw 2vh;
+    width: calc(100% - 2vw);
+    min-height: 70vh;
   }
-  
+
   .product {
-    flex: 1 0 calc(50% - 4px);
-    padding: 2px;
+    flex: 0 0 calc(50% - 3vw);
   }
 
   .product-title {
     font-size: 1em;
   }
 
-  .product-desc {
-    font-size: 14px;
+  .align-faq div {
+    flex: 0 0 calc(100% - 3vw);
   }
 }

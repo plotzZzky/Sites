@@ -1,7 +1,7 @@
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faWhatsapp, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import Logo from "../assets/icon.webp"
 
 export default function Footer() {
 
@@ -17,36 +17,27 @@ export default function Footer() {
     location.href = "https://instagram.com/_u/psicologia_ao_meu_redor/"
   }
 
-  function goLinkedin() {
-    location.href = "https://br.linkedin.com/"
-  }
-
   return(
     <footer id="footer">
         <div className="brand-footer">
-          <img className='brand-logo-footer' src={Logo}></img>
-          <span className="brand-name-footer"> Psicóloga Emanuelle</span>
+          <img className='brand-logo-footer' src='logo.png'></img>
+          <a className="brand-name-footer">Psicóloga Emanuelle</a>
         </div>
 
       <div className='align-links'>
-        <span onClick={goEmail}>
-          <FontAwesomeIcon icon={faEnvelope} />
-          psicoemanuelledecastro@gmail.com
-        </span>
-
         <span onClick={goWhats}>
           <FontAwesomeIcon icon={faWhatsapp} />
           (51)99834-1299
         </span>
 
+        <span onClick={goEmail}>
+          <FontAwesomeIcon icon={faEnvelope} />
+          contato@psicoemanuelledecastro.com.br
+        </span>
+
         <span onClick={goInsta}>
           <FontAwesomeIcon icon={faInstagram} />
           psicologia_ao_meu_redor
-        </span>
-
-        <span onClick={goLinkedin}>
-          <FontAwesomeIcon icon={faLinkedin} />
-          psicoemanuelledecastro
         </span>
       </div>
     </footer>    

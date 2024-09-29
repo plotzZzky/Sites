@@ -1,11 +1,9 @@
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-import Logo from "../assets/icon.webp"
 import './navbar.css'
 
-
 export default function NavBar() {
-
   function openMenu() {
     const navbar = document.getElementById("menu");
     if (navbar.className == "menu") {
@@ -45,7 +43,7 @@ export default function NavBar() {
     <nav>
       <div className='navbar-align'>
         <span className="brand" onClick={goHome}>
-          <img className='brand-logo' src={Logo}></img> Psicóloga Emanuelle
+          <img className='brand-logo' src='logo.png'></img> Psicóloga Emanuelle
         </span>
 
         <div className="menu" id="menu">
